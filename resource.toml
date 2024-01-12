@@ -1,0 +1,3 @@
+type = 'js'
+client-files = [ 'src/*' ]
+client-main = 'src/client.js'

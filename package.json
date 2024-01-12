@@ -1,0 +1,7 @@
+{
+    "private": true,
+    "dependencies": {
+        "@altv/types-client": "^16.0.11",
+        "@altv/types-shared": "^16.0.11"
+    }
+}

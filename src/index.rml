@@ -1,0 +1,213 @@
+<rml>
+
+    <head>
+        <!-- <link type="text/rcss" href="style.rcss"/> -->
+        <style>
+            body, div,
+            h1, h2, h3, h4,
+            h5, h6, p,
+            hr, pre, datagrid,
+            tabset tabs
+            {
+                display: block;
+            }
+
+            h1
+            {
+                font-size: 2em;
+                margin: .67em 0;
+            }
+
+            h2
+            {
+                font-size: 1.5em;
+                margin: .75em 0;
+            }
+
+            h3
+            {
+                font-size: 1.17em;
+                margin: .83em 0;
+            }
+
+            h4, p
+            {
+                margin: 1.12em 0;
+            }
+
+            h5
+            {
+                font-size: .83em;
+                margin: 1.5em 0;
+            }
+
+            h6
+            {
+                font-size: .75em;
+                margin: 1.67em 0;
+            }
+
+            h1, h2, h3, h4,
+            h5, h6, strong
+            {
+                font-weight: bold;
+            }
+
+            em
+            {
+                font-style: italic;
+            }
+
+            pre
+            {
+                white-space: pre;
+            }
+
+            hr
+            {
+                border-width: 1px;
+            }
+
+            table
+            {
+                box-sizing: border-box;
+                display: table;
+            }
+            tr
+            {
+                box-sizing: border-box;
+                display: table-row;
+            }
+            td
+            {
+                box-sizing: border-box;
+                display: table-cell;
+            }
+            col
+            {
+                box-sizing: border-box;
+                display: table-column;
+            }
+            colgroup
+            {
+                display: table-column-group;
+            }
+            thead, tbody, tfoot
+            {
+                display: table-row-group;
+            }
+
+            scrollbarvertical {
+                width: 0;
+                margin-left: 10px;
+            }
+
+            body {
+                font-family: rmlui-fallback-font;
+                color: white;
+                font-size: 16px;
+                line-height: 18px;
+                width: 100vw;
+                height: 100vh;
+            }
+
+            div {
+                display: block;
+            }
+
+            .group {
+                margin-bottom: 5px;
+            }
+
+            .group > .name {
+                background: #101010;
+                margin-bottom: 5px;
+                display: flex;
+                justify-content: space-between;
+                padding: 5px;
+                width: 100%;
+            }
+
+            .group > .name:hover {
+                background: #202020;
+            }
+
+            .group.open > .name {
+                background: #303030;
+            }
+
+            .group[error=true] > .name {
+                background: #401010
+            }
+
+            .group[error=true] > .name:hover {
+                background: #502020
+            }
+
+            .group.open[error=true] > .name {
+                background: #603030
+            }
+
+            #root {
+                background: rgba(0, 0, 0, 128);
+                position: absolute;
+                top: 0;
+                right: 0;
+                width: 600px;
+                height: 100vh;
+                overflow-y: scroll;
+            }
+
+            .property {
+                display: inline-block;
+                width: auto;
+                min-width: 80px;
+                background: #101010;
+                padding: 5px;
+                margin-right: 2px;
+                margin-bottom: 2px;
+            }
+
+            .property[error=true] {
+                background: #401010
+            }
+
+            .syncProperties {
+                display: flex;
+                flex-wrap: wrap;
+                width: 600px;
+                margin-left: 10px;
+            }
+
+            .group > .content {
+                display: none;
+            }
+
+            .group.open > .content {
+                display: block;
+            }
+            
+            .group.open > .caret {
+                transform: rotate(180deg);
+            }
+
+            .component {
+                margin-left: 10px;
+            }
+            
+            .info {
+                background: #101010;
+                margin-left: 10px;
+                margin-bottom: 5px;
+                padding: 5px;
+                white-space: pre-line;
+            }
+        </style>
+    </head>
+
+    <body>
+        <div id="root">
+            <div class="wrapper"></div>
+        </div>
+    </body>
+</rml>
