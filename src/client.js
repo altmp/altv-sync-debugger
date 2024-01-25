@@ -1,4 +1,3 @@
-
 import alt from 'alt-client';
 
 class SyncDebugger {
@@ -8,18 +7,18 @@ class SyncDebugger {
         this.timer = alt.setInterval(this.updateTick, 10);
         this.state = false;
 
-        alt.on('worldObjectStreamIn', this.streamIn);
-        alt.on('worldObjectStreamOut', this.streamOut);
-        alt.on('gameEntityCreate', this.streamIn);
-        alt.on('gameEntityDestroy', this.streamIn);
+        //alt.on('worldObjectStreamIn', this.streamIn);
+        //alt.on('worldObjectStreamOut', this.streamOut);
+        //alt.on('gameEntityCreate', this.streamIn);
+        //alt.on('gameEntityDestroy', this.streamIn);
         alt.on('keydown', this.keydown);
     }
 
     destroy() {
-        alt.off('worldObjectStreamIn', this.streamIn);
-        alt.off('worldObjectStreamOut', this.streamOut);
-        alt.off('gameEntityCreate', this.streamIn);
-        alt.off('gameEntityDestroy', this.streamIn);
+        //alt.off('worldObjectStreamIn', this.streamIn);
+        //alt.off('worldObjectStreamOut', this.streamOut);
+        //alt.off('gameEntityCreate', this.streamIn);
+        //alt.off('gameEntityDestroy', this.streamIn);
         alt.off('keydown', this.keydown);
 
         alt.clearTimer(this.timer);
@@ -27,21 +26,9 @@ class SyncDebugger {
     }
 
     updateTick = () => {
-        for (const player of alt.Player.all) {
-            this.updateData(player);
-        }
-        for (const vehicle of alt.Vehicle.all) {
-            if (!vehicle.isRemote) continue;
-            this.updateData(vehicle);
-        }
-        for (const ped of alt.Ped.all) {
-            if (!ped.isRemote) continue;
-            this.updateData(ped);
-        }
-        for (const object of alt.Object.all) {
-            if (!object.isRemote) continue;
-            this.updateData(object);
-        }
+        //this.updateData(alt.Player.local);
+        if(alt.Player.local.vehicle)
+            this.updateData(alt.Player.local.vehicle)
     }
 
     streamIn = (entity) => {
